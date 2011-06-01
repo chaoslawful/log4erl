@@ -30,6 +30,7 @@
 
 -export([simp_msg/4]).
 
+-spec simp_msg(string(), string(), string(), string()) -> string().
 simp_msg(From, To, Subject, Message) ->
 	FromStr = ["from: ", From, "\r\n"],
 	ToStr = ["to: ", To, "\r\n"],
