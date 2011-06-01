@@ -36,4 +36,6 @@ simp_msg(From, To, Subject, Message) ->
 	ToStr = ["to: ", To, "\r\n"],
 	SubjStr = ["subject: ", Subject, "\r\n"],
 	MsgStr = ["\r\n", Message],
-	lists:concat(lists:concat([FromStr, ToStr, SubjStr, MsgStr, ["\r\n"]])).
+	Mail = lists:concat(lists:concat([FromStr, ToStr, SubjStr, MsgStr, "\r\n"])),
+	Mail.
+
