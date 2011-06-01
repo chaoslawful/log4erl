@@ -152,14 +152,14 @@ get_token_value(iso_format2, Log) ->
     UDs = calendar:datetime_to_gregorian_seconds(UD),
     TZ = case Ds-UDs > 0 of
 	     true ->
-		 {_,{A,B,_}} = calendar:gregorian_seconds_to_datetime(Ds-UDs),
-		 A2 = log4erl_utils:return_2columns(integer_to_list(A)),
-		 B2 = log4erl_utils:return_2columns(integer_to_list(B)),
+		 {_,{A1,B1,_}} = calendar:gregorian_seconds_to_datetime(Ds-UDs),
+		 A2 = log4erl_utils:return_2columns(integer_to_list(A1)),
+		 B2 = log4erl_utils:return_2columns(integer_to_list(B1)),
 		 "+" ++ A2 ++ ":" ++ B2;
 	     _ ->
-		 {_,{C,D,_}} = calendar:gregorian_seconds_to_datetime(UDs-Ds),
-		 C2 = log4erl_utils:return_2columns(integer_to_list(C)),
-		 D2 = log4erl_utils:return_2columns(integer_to_list(D)),
+		 {_,{C1,D1,_}} = calendar:gregorian_seconds_to_datetime(UDs-Ds),
+		 C2 = log4erl_utils:return_2columns(integer_to_list(C1)),
+		 D2 = log4erl_utils:return_2columns(integer_to_list(D1)),
 		 "-" ++ C2 ++ ":" ++ D2
 	 end,
     get_token_value(date2, Log) ++ "T" ++ get_token_value(time2, Log) ++ TZ;
@@ -171,14 +171,14 @@ get_token_value(time_zone, Log) ->
     UDs = calendar:datetime_to_gregorian_seconds(UD),
     TZ = case Ds-UDs > 0 of
 	     true ->
-		 {_,{A,B,_}} = calendar:gregorian_seconds_to_datetime(Ds-UDs),
-		 A2 = log4erl_utils:return_2columns(integer_to_list(A)),
-		 B2 = log4erl_utils:return_2columns(integer_to_list(B)),
+		 {_,{A1,B1,_}} = calendar:gregorian_seconds_to_datetime(Ds-UDs),
+		 A2 = log4erl_utils:return_2columns(integer_to_list(A1)),
+		 B2 = log4erl_utils:return_2columns(integer_to_list(B1)),
 		 "+" ++ A2 ++ ":" ++ B2;
 	     _ ->
-		 {_,{C,D,_}} = calendar:gregorian_seconds_to_datetime(UDs-Ds),
-		 C2 = log4erl_utils:return_2columns(integer_to_list(C)),
-		 D2 = log4erl_utils:return_2columns(integer_to_list(D)),
+		 {_,{C1,D1,_}} = calendar:gregorian_seconds_to_datetime(UDs-Ds),
+		 C2 = log4erl_utils:return_2columns(integer_to_list(C1)),
+		 D2 = log4erl_utils:return_2columns(integer_to_list(D1)),
 		 "-" ++ C2 ++ ":" ++ D2
 	 end,
     TZ;

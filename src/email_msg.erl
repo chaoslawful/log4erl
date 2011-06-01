@@ -30,12 +30,10 @@
 
 -export([simp_msg/4]).
 
--spec simp_msg(string(), string(), string(), string()) -> string().
 simp_msg(From, To, Subject, Message) ->
 	FromStr = ["from: ", From, "\r\n"],
 	ToStr = ["to: ", To, "\r\n"],
 	SubjStr = ["subject: ", Subject, "\r\n"],
 	MsgStr = ["\r\n", Message],
-	Mail = lists:concat(lists:concat([FromStr, ToStr, SubjStr, MsgStr, "\r\n"])),
-	Mail.
+	lists:concat(lists:concat([FromStr, ToStr, SubjStr, MsgStr, "\r\n"])).
 

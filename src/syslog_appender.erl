@@ -164,12 +164,12 @@ do_send(S,Host,Port,{Who,Facility,Level,Msg})
 
 i2l(Int) when is_integer(Int) ->
     integer_to_list(Int);
-i2l(Int) ->
+i2l(Int) when is_list(Int) ->
     Int.
 
 a2l(Atom) when is_atom(Atom) ->
     atom_to_list(Atom);
-a2l(Atom) ->
+a2l(Atom) when is_list(Atom) ->
     Atom.
 
 %% Log4erl uses decreasing values for priority
