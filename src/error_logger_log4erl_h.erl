@@ -3,14 +3,14 @@
 
 %% Code is released as MPL with Jakub's permission
 
--module(error_logger_log4erl_h).
--behaviour(gen_event).
-
 %% @author Jakub Odias
 %% @copyright Proximetry
 %% @version 1.0.0
 %% @doc Handles events reported by error_logger and forwards it to log4erl
 %% @end
+
+-module(error_logger_log4erl_h).
+-behaviour(gen_event).
 
 %% gen_event callbacks
 -export([init/1, handle_event/2, handle_call/2, 
